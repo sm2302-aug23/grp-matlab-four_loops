@@ -12,6 +12,7 @@ t = 0:n-1; % Parametric coordinate t
 
  % Plot settings
  figure(1)
+ subplot(2,2,1);
  plot(xx, yy, 'k', 'LineWidth', 2) % plot spline
  hold on
  plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
@@ -37,6 +38,7 @@ yy = spline(t, y, tt);
 
 % Plot settings
 figure(1)
+subplot(2,2,2);
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
