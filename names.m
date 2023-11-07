@@ -97,7 +97,7 @@ tt = 0:0.01:n-1; % More dense coordinate tt for spline interpolation
 
  % Plot settings
  figure(1)
- subplot(2,2,1);
+ subplot(2,2,4);
  plot(xx, yy, 'k', 'LineWidth', 2) % plot spline
  hold on
  plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
