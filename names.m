@@ -4,7 +4,7 @@ y = [1.5 2.2 3 3.6 3 1.5 0 1 2.2 1.8 1.75 2.4 2.8 2 1.7 2.6 1.8 2.3 2.8 2.5 2.75
 
 n = length(x);
 t = 0:n-1; % Parametric coordinate t
- tt = 0:0.01:n-1; % More dense coordinate tt for spline interpolation
+tt = 0:0.01:n-1; % More dense coordinate tt for spline interpolation
 
 % Compute spline interpolation
  xx = spline(t, x, tt);
@@ -42,10 +42,43 @@ subplot(2,2,2);
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
-axis([-0.2 20 0 8])
+axis([6 20 0 8])
 grid on
 title('Spline Interpolation of Cursive Name Mizah')
 xlabel('x')
 ylabel('y')
 set(gca, 'FontSize', 10, 'LineWidth', 1)
+grid on
+
+% Data for the name 'timah'
+x3 = [2 1.8 1.25 0.9 1.65 2.6 2.3 1.65 1.2 1.5...
+    2.4 2.75 2.85 2.75 2.35 2.4...
+    2.85 3.4 3.05 2.7 3.2 3.6 3.9 3.65 3.7 4.3 4.2 4.3...
+    4.9 5 4.4 4.5 4.95 5.4 5.35 5.2 5.25...
+    6 6.4 6.1 5.65 5.6 6 6.5 6.4 6.5];
+y3 = [3.5 2.75 2.5 2.8 2.55 2.35 2.75 2.55 1.5 0.5...
+    1.15 1.9 2.25 1.9 1.5 0.5...
+    1.25 2.1 1.2 0.4 1.4 2 1.35 1 1.3 1.8 1.2 0.5...
+    0.85 1.65 1 0.6 0.7 1.15 1.65 1.15 0.5...
+    1.6 2.5 2.1 1 0.45 1.3 1.7 1.05 0.5];
+
+n = length(x3);
+t3 = 0:n-1;
+tt3 = 0:0.01:n-1;
+
+xx3 = spline(t3, x3, tt3);
+yy3 = spline(t3, y3, tt3);
+
+% plotting the names
+figure (1)
+subplot(2,2,3);
+plot (xx3, yy3, 'k', 'LineWidth', 1.5)
+hold on
+plot (x3, y3, 'bo', 'MarkerFaceColor','r')
+axis([0 7 0 4])
+grid on
+title ('Spline Interpolation of Cursive name timah')
+xlabel('x')
+ylabel('y')
+set (gca, 'Fontsize', 10, 'LineWidth', 1)
 grid on
